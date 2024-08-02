@@ -27,4 +27,44 @@ public class Driver : User
     {
         DrivingExperience += years;
     }
+
+    public string GetName()
+    {
+        return Name + " " + LastName;
+    }
+
+    public string GetIdNumber()
+    {
+        return IdentificationNumber;
+    }
+
+    public int GetAge()
+    {
+        return DateTime.Now.Year - BirthDate.Year;
+    }
+
+    public string GetPhoneNumber()
+    {
+        return PhoneNumber;
+    }
+
+    public string GetAddress()
+    {
+        return Address;
+    }
+
+    public string GetLicenseNumber()
+    {
+        return LicenseNumber;
+    }
+
+    public string GetLicenseCategory()
+    {
+        return LicenseCategory;
+    }
+
+    public int GetDrivingExperience()
+    {
+        return DrivingExperience;
+    }
 }

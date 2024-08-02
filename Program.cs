@@ -1,7 +1,7 @@
 ﻿using simulacro.Models;
 
 var driver1 = new Driver("alberto", "buitrago", "cc", "1032456896", new DateOnly(1990, 10, 03), "albertobuitrago@gmail.com", "3007801458", "calle 15c #82bb 35", "123456987", "B2", 5);
-var driver2 = new Driver("freddy", "guarin", "cc", "1024578596", new DateOnly(1980, 06, 04), "guarini@gmail.com", "30045896425", "calle 42 wallaby", "987456321", "A2", 10);
+var driver2 = new Driver("freddy", "guarin", "cc", "1024578596", new DateOnly(1980, 06, 04), "guarini@gmail.com", "3004596425", "calle 42 wallaby", "987456321", "A2", 10);
 var driver3 = new Driver("esteban", "lopez", "cc", "1032456896", new DateOnly(1992, 04, 23), "lopez@gmail.com", "3005801458", "calle 15c #82bb 35", "123456987", "B2", 7);
 
 Company.drivers.Add(driver1);
@@ -22,19 +22,80 @@ Company.vehicles.Add(vehicle1);
 Company.vehicles.Add(vehicle2);
 Company.vehicles.Add(vehicle3);
 
+void AddDriver()
+{
+}
+
+void DeleteDriver()
+{
+}
+
+void ShowDrivers()
+{
+    Company.ShowDrivers();
+}
+
 void Menu()
 {
+    Console.Clear();
     Console.WriteLine("-----------------------------------");
     Console.WriteLine("|            TransRiwi            |");
     Console.WriteLine("-----------------------------------");
     Console.WriteLine("| 1.  Add driver                  |");
     Console.WriteLine("| 2.  Delete driver               |");
-    Console.WriteLine("| 3.  Add customer                |");
-    Console.WriteLine("| 4.  Delete customer             |");
-    Console.WriteLine("| 5.  Add vehicle                 |");
-    Console.WriteLine("| 6.  Delete vehicle              |");
+    Console.WriteLine("| 3.  Show drivers                |");
+    Console.WriteLine("| 4.  Add customer                |");
+    Console.WriteLine("| 5.  Delete customer             |");
+    Console.WriteLine("| 6.  Show customers              |");
+    Console.WriteLine("| 7.  Add vehicle                 |");
+    Console.WriteLine("| 8.  Delete vehicle              |");
+    Console.WriteLine("| 9.  Show vehicles               |");
     Console.WriteLine("-----------------------------------");
     Console.Write("Write the number of the option that you want: ");
+    int option = int.Parse(Console.ReadLine());
+
+    switch (option)
+    {
+        case 1:
+        Console.Clear();
+            AddDriver();
+            break;
+        case 2:
+        Console.Clear();
+            DeleteDriver();
+            break;
+        case 3:
+        Console.Clear();
+            ShowDrivers();
+            break;
+        // case 4:
+        // Console.Clear();
+        //     AddCustomer();
+        //     break;
+        // case 5:
+        // Console.Clear();
+        //     DeleteCustomer();
+        //     break;
+        // case 6:
+        // Console.Clear();
+        //     ShowCustomers();
+        //     break;
+        // case 7:
+        // Console.Clear();
+        //     AddVehicle();
+        //     break;
+        // case 8:
+        // Console.Clear();
+        //     DeleteVehicle();
+        //     break;
+        // case 9:
+        // Console.Clear();
+        //     ShowVehicles();
+        //     break;
+        default:
+            Console.WriteLine("Invalid option.");
+            break;
+    }
 }
 
 Menu();
