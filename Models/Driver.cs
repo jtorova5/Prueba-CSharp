@@ -67,4 +67,56 @@ public class Driver : User
     {
         return DrivingExperience;
     }
+
+    public void UpdateName(string name)
+    {
+        Name = name;
+    }
+
+    public void UpdateLastName(string lastName)
+    {
+        LastName = lastName;
+    }
+
+    public void UpdateTypeDocument(string type)
+    {
+        TypeDocument = type;
+    }
+    
+    public void UpdateIdentificationNumber(string identificationNumber)
+    {
+        IdentificationNumber = identificationNumber;
+    }
+
+    public void UpdateBirthDate(DateOnly birthDate)
+    {
+        BirthDate = birthDate;
+    }
+
+    public void UpdateEmail(string email)
+    {
+        Email = email;
+    }
+
+    public void UpdatePhoneNumber(string phoneNumber)
+    {
+        PhoneNumber = phoneNumber;
+    }
+
+    public void UpdateAddress(string address)
+    {
+        Address = address;
+    }
+
+    public void UpdateLicenseNumber(string licenseNumber)
+    {
+        LicenseNumber = licenseNumber;
+    }
+
+    public void UpdateDrivingExperience(int drivingExperience)
+    {
+        DrivingExperience = drivingExperience;
+    }
+
+
 }

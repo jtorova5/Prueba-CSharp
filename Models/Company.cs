@@ -21,6 +21,52 @@ public class Company
         DriversList.Remove(driver);
     }
 
+    public static void UpdateDriver(string idNumber)
+    {
+        var driver = DriversList.Find(d => d.GetIdNumber() == idNumber);
+        if (driver != null)
+        {
+            Console.Clear();
+            Console.WriteLine("Update Driver");
+            Console.WriteLine();
+            Console.Write("Enter the new name: ");
+            var newName = Console.ReadLine();
+            driver.UpdateName(newName);
+            Console.Write("Enter the new last name: ");
+            var newLastName = Console.ReadLine();
+            driver.UpdateLastName(newLastName);
+            Console.Write("Enter the new type document: ");
+            var newTypeDocument = Console.ReadLine();
+            driver.UpdateTypeDocument(newTypeDocument);
+            Console.Write("Enter the new identification number: ");
+            var newIdNumber = Console.ReadLine();
+            driver.UpdateIdentificationNumber(newIdNumber);
+            Console.Write("Enter the new email: ");
+            var newEmail = Console.ReadLine();
+            driver.UpdateEmail(newEmail);
+            Console.Write("Enter the new phone number: ");
+            var newPhoneNumber = Console.ReadLine();
+            driver.UpdatePhoneNumber(newPhoneNumber);
+            Console.Write("Enter the new address: ");
+            var newAddress = Console.ReadLine();
+            driver.UpdateAddress(newAddress);
+            Console.Write("Enter the new license number: ");
+            var newLicenseNumber = Console.ReadLine();
+            driver.UpdateLicenseNumber(newLicenseNumber);
+            Console.Write("Enter the new license category: ");
+            var newCategory = Console.ReadLine();
+            driver.UpdateLicenseCategory(newCategory);
+            Console.Write("Enter the new number of years of driving experience: ");
+            var newExperience = int.Parse(Console.ReadLine());
+            driver.UpdateDrivingExperience(newExperience);
+        }
+        else
+        {
+            Console.Clear();
+            Console.WriteLine("Driver not found.");
+        }
+    }
+
     public static void ShowDrivers()
     {
         Console.WriteLine("------------------------------------------------------------------------------------------");

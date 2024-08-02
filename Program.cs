@@ -90,6 +90,15 @@ void ShowDrivers()
     Company.ShowDrivers();
 }
 
+void UpdateDriver()
+{
+    Console.WriteLine("Update Driver");
+    Console.WriteLine();
+    Console.Write("Enter the driver's identification number: ");
+    string identificationNumber = Console.ReadLine();
+    Company.UpdateDriver(identificationNumber);
+}
+
 void Menu()
 {
     Console.Clear();
@@ -99,12 +108,13 @@ void Menu()
     Console.WriteLine("| 1.  Add driver                  |");
     Console.WriteLine("| 2.  Delete driver               |");
     Console.WriteLine("| 3.  Show drivers                |");
-    Console.WriteLine("| 4.  Add customer                |");
-    Console.WriteLine("| 5.  Delete customer             |");
-    Console.WriteLine("| 6.  Show customers              |");
-    Console.WriteLine("| 7.  Add vehicle                 |");
-    Console.WriteLine("| 8.  Delete vehicle              |");
-    Console.WriteLine("| 9.  Show vehicles               |");
+    Console.WriteLine("| 4.  Update driver               |");
+    Console.WriteLine("| 5.  Add customer                |");
+    Console.WriteLine("| 6.  Delete customer             |");
+    Console.WriteLine("| 7.  Show customers              |");
+    Console.WriteLine("| 8.  Add vehicle                 |");
+    Console.WriteLine("| 9.  Delete vehicle              |");
+    Console.WriteLine("| 10. Show vehicles               |");
     Console.WriteLine("-----------------------------------");
     Console.Write("Write the number of the option that you want: ");
     int option = int.Parse(Console.ReadLine());
@@ -125,6 +135,12 @@ void Menu()
         case 3:
             Console.Clear();
             ShowDrivers();
+            getMenu();
+            break;
+            case 4:
+            Console.Clear();
+            ShowDrivers();
+            UpdateDriver();
             getMenu();
             break;
         // case 4:
