@@ -99,6 +99,47 @@ void UpdateDriver()
     Company.UpdateDriver(identificationNumber);
 }
 
+void AddCustomer()
+{
+    Console.Clear();
+    Console.WriteLine("Add Customer");
+    Console.WriteLine();
+    Console.Write("Name: ");
+    string name = Console.ReadLine();
+    Console.Write("Last Name: ");
+    string lastName = Console.ReadLine();
+    Console.Write("Type Document: ");
+    string typeDocument = Console.ReadLine();
+    Console.Write("Identification Number: ");
+    string identificationNumber = Console.ReadLine();
+    Console.Write("Birth Date (yyyy-mm-dd): ");
+    DateOnly birthDate = DateOnly.Parse(Console.ReadLine());
+    Console.Write("Email: ");
+    string email = Console.ReadLine();
+    Console.Write("Phone Number: ");
+    string phoneNumber = Console.ReadLine();
+    Console.Write("Address: ");
+    string address = Console.ReadLine();
+    Console.Write("Membership Level: ");
+    string membershipLevel = Console.ReadLine();
+    Console.Write("Payment Method: ");
+    string paymentMethod = Console.ReadLine();
+
+    var customer = new Customer(name, lastName, typeDocument, identificationNumber, birthDate, email, phoneNumber, address, membershipLevel, paymentMethod);
+    Company.AddCustomer(customer);
+    Console.WriteLine();
+    Console.WriteLine($"Customer {name + " " + lastName} added successfully!");
+}
+
+void DeleteCustomer()
+{
+}
+
+void ShowCustomers()
+{
+    Company.ShowCustomers();
+}
+
 void Menu()
 {
     Console.Clear();
@@ -137,24 +178,27 @@ void Menu()
             ShowDrivers();
             getMenu();
             break;
-            case 4:
+        case 4:
             Console.Clear();
             ShowDrivers();
             UpdateDriver();
             getMenu();
             break;
-        // case 4:
-        // Console.Clear();
-        //     AddCustomer();
-        //     break;
-        // case 5:
-        // Console.Clear();
-        //     DeleteCustomer();
-        //     break;
-        // case 6:
-        // Console.Clear();
-        //     ShowCustomers();
-        //     break;
+        case 5:
+            Console.Clear();
+            AddCustomer();
+            getMenu();
+            break;
+        case 6:
+            Console.Clear();
+            DeleteCustomer();
+            getMenu();
+            break;
+        case 7:
+            Console.Clear();
+            ShowCustomers();
+            getMenu();
+            break;
         // case 7:
         // Console.Clear();
         //     AddVehicle();

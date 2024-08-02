@@ -82,9 +82,19 @@ public class Company
             var LicenseCategory = driver.GetLicenseCategory();
             var DrivingExperience = driver.GetDrivingExperience();
 
-            Console.WriteLine($"| {Name,-18} | {IdNumber,-10} | {Age,-3} | {PhoneNumber,-11}| {LicenseNumber, -8} |    {LicenseCategory,-6}| {DrivingExperience,-5}años  |");
+            Console.WriteLine($"| {Name,-18} | {IdNumber,-10} | {Age,-3} | {PhoneNumber,-11}| {LicenseNumber,-8} |    {LicenseCategory,-6}| {DrivingExperience,-5}años  |");
         }
         Console.WriteLine("------------------------------------------------------------------------------------------");
+    }
+
+    public static void AddCustomer(Customer customer)
+    {
+        CustomersList.Add(customer);
+    }
+
+    public static void RemoveCustomer(Customer customer)
+    {
+        CustomersList.Remove(customer);
     }
 
     public static void AddVehicle(Vehicle vehicle)
@@ -97,13 +107,26 @@ public class Company
         VehiclesList.Remove(vehicle);
     }
 
-    public static void AddCustomer(Customer customer)
+    public static void ShowCustomers()
     {
-        CustomersList.Add(customer);
-    }
+        Console.WriteLine("Customer list: ");
+        Console.WriteLine();
+        Console.WriteLine("--------------------------------------------------------------------------------------------------------------------------------------------");
+        Console.WriteLine("|        Name        |     Id     | Age |    Phone    |         Email        | Phone Number |          Address          |  Payment method  |");
+        Console.WriteLine("--------------------------------------------------------------------------------------------------------------------------------------------");
+        foreach (var customer in CustomersList)
+        {
+            var Name = customer.GetName();
+            var IdNumber = customer.GetIdNumber();
+            var Age = customer.GetAge();
+            var PhoneNumber = customer.GetPhoneNumber();
+            var Email = customer.GetEmail();
+            var PhoneNumberCustomer = customer.GetPhoneNumber();
+            var Address = customer.GetAddress();
+            var CreditCardType = customer.GetPreferredPaymentMethod();
 
-    public static void RemoveCustomer(Customer customer)
-    {
-        CustomersList.Remove(customer);
+            Console.WriteLine($"| {Name,-18} | {IdNumber,-10} | {Age,-3} | {PhoneNumber,-12}| {Email,-20} | {PhoneNumberCustomer,-13}| {Address,-25} | {CreditCardType,-17}|");
+        }
+        Console.WriteLine("--------------------------------------------------------------------------------------------------------------------------------------------");
     }
 }

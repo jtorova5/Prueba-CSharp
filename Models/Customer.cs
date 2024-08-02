@@ -23,4 +23,49 @@ public class Customer : User
         Console.WriteLine();
         Console.WriteLine($"Nivel de membresía actualizado a: {MembershipLevel}");
     }
+
+    public string GetName()
+    {
+        return Name + " " + LastName;
+    }
+
+    public string GetDocumentType()
+    {
+        return TypeDocument;
+    }
+
+    public string GetIdNumber()
+    {
+        return IdentificationNumber;
+    }
+
+    public int GetAge()
+    {
+        return DateTime.Now.Year - BirthDate.Year;
+    }
+
+    public string GetPhoneNumber()
+    {
+        return PhoneNumber;
+    }
+
+    public string GetAddress()
+    {
+        return Address;
+    }
+
+    public string GetEmail()
+    {
+        return Email;
+    }
+
+    public string GetMembershipLevel()
+    {
+        return MembershipLevel;
+    }
+    
+    public string GetPreferredPaymentMethod()
+    {
+        return PreferredPaymentMethod;
+    }
 }
