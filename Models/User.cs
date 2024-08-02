@@ -17,5 +17,18 @@ public class User
     protected string PhoneNumber { get; set; }
     protected string Address { get; set; }
 
+    public User(string name, string lastName, string typeDocument, string identificationNumber, DateOnly birthDate, string email, string phoneNumber, string address)
+    {
+        Id = Guid.NewGuid();
+        Name = name;
+        LastName = lastName;
+        TypeDocument = typeDocument;
+        IdentificationNumber = identificationNumber;
+        BirthDate = birthDate;
+        Email = email;
+        PhoneNumber = phoneNumber;
+        Address = address;
+    }
+
 
 }
