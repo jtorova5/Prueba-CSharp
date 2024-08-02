@@ -7,5 +7,6 @@ namespace simulacro.Models;
 
 public class Customer
 {
-
+    public string MembershipLevel { get; set; }
+    public string PreferredPaymentMethod { get; set; }
 }
