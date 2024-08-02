@@ -49,6 +49,6 @@ public class User
 
     protected void ShowAge()
     {
-
+        Console.WriteLine($"Age: {CalculateAge()}");
     }
 }
