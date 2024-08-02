@@ -15,4 +15,9 @@ public class Customer : User
         MembershipLevel = membershipLevel;
         PreferredPaymentMethod = preferredPaymentMethod;
     }
+
+    public void UpdateMembershipLevel()
+    {
+
+    }
 }
