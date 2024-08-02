@@ -109,8 +109,6 @@ public class Company
 
     public static void ShowCustomers()
     {
-        Console.WriteLine("Customer list: ");
-        Console.WriteLine();
         Console.WriteLine("--------------------------------------------------------------------------------------------------------------------------------------------");
         Console.WriteLine("|        Name        |     Id     | Age |    Phone    |         Email        | Phone Number |          Address          |  Payment method  |");
         Console.WriteLine("--------------------------------------------------------------------------------------------------------------------------------------------");

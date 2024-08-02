@@ -80,7 +80,7 @@ void DeleteDriver()
     }
     else
     {
-        Console.WriteLine();
+        Console.Clear();
         Console.WriteLine("Driver not found.");
     }
 }
@@ -133,6 +133,23 @@ void AddCustomer()
 
 void DeleteCustomer()
 {
+    Console.WriteLine("Delete Customer");
+    Console.WriteLine();
+    Console.Write("Enter the customer's identification number: ");
+    string identificationNumber = Console.ReadLine();
+
+    var customer = Company.CustomersList.Find(c => c.GetIdNumber() == identificationNumber);
+    if (customer!= null)
+    {
+        Company.RemoveCustomer(customer);
+        Console.Clear();
+        Console.WriteLine($"Customer {customer.GetName()} deleted successfully!");
+    }
+    else
+    {
+        Console.Clear();
+        Console.WriteLine("Customer not found.");
+    }
 }
 
 void ShowCustomers()
@@ -191,6 +208,7 @@ void Menu()
             break;
         case 6:
             Console.Clear();
+            ShowCustomers();
             DeleteCustomer();
             getMenu();
             break;
