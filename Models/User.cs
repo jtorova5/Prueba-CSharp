@@ -30,4 +30,18 @@ public class User
         Address = address;
     }
 
+    protected void ShowDetails()
+    {
+
+    }
+
+    protected int CalculateAge()
+    {
+        return 0;
+    }
+
+    protected void ShowAge()
+    {
+
+    }
 }
