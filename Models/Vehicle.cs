@@ -25,4 +25,9 @@ public class Vehicle
         PeopleCapacity = peopleCapacity;
         Owner = owner;
     }
+
+    public void DeleteVehicle(int id)
+    {
+        
+    }
 }
