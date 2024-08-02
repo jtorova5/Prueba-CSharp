@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.VisualBasic;
 
 namespace simulacro.Models;
 
@@ -196,14 +197,22 @@ public class Company
             var PeopleCapacity = vehicle.PeopleCapacity;
             var Owner = vehicle.Owner.GetName();
 
-            Console.WriteLine($"| {Id, -2} |   {PlateNumber,-8} | {Type,-10} | {EngineNumber,-13} | {SerialNumber,-13} |    {PeopleCapacity,-5} | {Owner,-18}|");
+            Console.WriteLine($"| {Id,-2} |   {PlateNumber,-8} | {Type,-10} | {EngineNumber,-13} | {SerialNumber,-13} |    {PeopleCapacity,-5} | {Owner,-18}|");
         }
         Console.WriteLine("-----------------------------------------------------------------------------------------------");
     }
 
     public static int IdAuto()
     {
-        var IdCount = VehiclesList.Count();
-        return IdCount + 1;
+        var validateVehicle = VehiclesList;
+        var IdCount = VehiclesList.Count() + 1;
+        if (validateVehicle.Last().Id == IdCount)
+        {
+            return IdCount + 1;
+        }
+        else
+        {
+            return IdCount;
+        }
     }
 }

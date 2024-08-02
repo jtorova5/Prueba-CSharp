@@ -180,7 +180,7 @@ void AddVehicle()
     string serialNumber = Console.ReadLine();
     Console.Write("People Capacity: ");
     byte peopleCapacity = byte.Parse(Console.ReadLine());
-    Console.Write("Driver ID: ");
+    Console.Write("Driver Id number: ");
     int driverId = Convert.ToInt32(Console.ReadLine());
     var driver = Company.DriversList.Find(d => Convert.ToInt32(d.GetIdNumber()) == driverId);
 
@@ -192,7 +192,11 @@ void AddVehicle()
 
 void DeleteVehicle()
 {
-
+    Console.WriteLine("Delete Vehicle");
+    Console.WriteLine();
+    Console.Write("Enter the vehicle's Id: ");
+    int vehicleId = int.Parse(Console.ReadLine());
+    Vehicle.DeleteVehicle(vehicleId);
 }
 
 void ShowVehicles()
@@ -303,6 +307,7 @@ void Menu()
             break;
         default:
             Console.WriteLine("Invalid option.");
+            getMenu();
             break;
     }
 }

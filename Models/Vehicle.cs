@@ -37,9 +37,20 @@ public class Vehicle
         Owner = owner;
     }
 
-    public void DeleteVehicle(int id)
+    public static void DeleteVehicle(int id)
     {
-
+        var vehicle = Company.VehiclesList.Find(v => v.Id == id);
+        if (vehicle != null)
+        {
+            Company.RemoveVehicle(vehicle);
+            Console.Clear();
+            Console.WriteLine($"Vehicle with Id: {id} deleted successfully!");
+        }
+        else
+        {
+            Console.Clear();
+            Console.WriteLine("Vehicle not found.");
+        }
     }
 
 
