@@ -18,6 +18,9 @@ public class Customer : User
 
     public void UpdateMembershipLevel()
     {
-
+        Console.Write("¿Cuál es el nivel de su membresia? ");
+        MembershipLevel = Console.ReadLine();
+        Console.WriteLine();
+        Console.WriteLine($"Nivel de membresía actualizado a: {MembershipLevel}");
     }
 }
