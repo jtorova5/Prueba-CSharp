@@ -32,7 +32,14 @@ public class User
 
     protected void ShowDetails()
     {
-
+        Console.WriteLine($"Name: {Name}");
+        Console.WriteLine($"Last Name: {LastName}");
+        Console.WriteLine($"Type Document: {TypeDocument}");
+        Console.WriteLine($"Identification Number: {IdentificationNumber}");
+        Console.WriteLine($"Birth Date: {BirthDate.ToShortDateString()}");
+        Console.WriteLine($"Email: {Email}");
+        Console.WriteLine($"Phone Number: {PhoneNumber}");
+        Console.WriteLine($"Address: {Address}");
     }
 
     protected int CalculateAge()
