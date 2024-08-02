@@ -17,4 +17,14 @@ public class Driver : User
         LicenseCategory = licenseCategory;
         DrivingExperience = drivingExperience;
     }
+
+    public void UpdateLicenseCategory(string newCategory)
+    {
+
+    }
+
+    public void AddExperience(int years)
+    {
+        
+    }
 }
