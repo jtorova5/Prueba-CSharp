@@ -17,7 +17,7 @@ public class User
     protected string PhoneNumber { get; set; }
     protected string Address { get; set; }
 
-    public User(string name, string lastName, string typeDocument, string identificationNumber, DateOnly birthDate, string email, string phoneNumber, string address)
+    protected User(string name, string lastName, string typeDocument, string identificationNumber, DateOnly birthDate, string email, string phoneNumber, string address)
     {
         Id = Guid.NewGuid();
         Name = name;
@@ -29,6 +29,5 @@ public class User
         PhoneNumber = phoneNumber;
         Address = address;
     }
-
 
 }
