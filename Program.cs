@@ -168,7 +168,26 @@ void UpdateCustomer()
 
 void AddVehicle()
 {
+    Console.WriteLine("Add Vehicle");
+    Console.WriteLine();
+    Console.Write("Plate Number: ");
+    string plateNumber = Console.ReadLine();
+    Console.Write("Type: ");
+    string type = Console.ReadLine();
+    Console.Write("Engine Number: ");
+    string engineNumber = Console.ReadLine();
+    Console.Write("Serial Number: ");
+    string serialNumber = Console.ReadLine();
+    Console.Write("People Capacity: ");
+    byte peopleCapacity = byte.Parse(Console.ReadLine());
+    Console.Write("Driver ID: ");
+    int driverId = Convert.ToInt32(Console.ReadLine());
+    var driver = Company.DriversList.Find(d => Convert.ToInt32(d.GetIdNumber()) == driverId);
 
+    var vehicle = new Vehicle(plateNumber, type, engineNumber, serialNumber, peopleCapacity, driver);
+    Company.AddVehicle(vehicle);
+    Console.WriteLine();
+    Console.WriteLine($"Vehicle with plate number {plateNumber} added successfully!");
 }
 
 void DeleteVehicle()
@@ -261,6 +280,7 @@ void Menu()
             break;
         case 9:
             Console.Clear();
+            ShowDrivers();
             AddVehicle();
             getMenu();
             break;

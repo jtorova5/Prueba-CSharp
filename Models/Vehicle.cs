@@ -26,10 +26,21 @@ public class Vehicle
         Owner = owner;
     }
 
+    public Vehicle(string carPlate, string type, string engineNumber, string serialNumber, byte peopleCapacity, Driver owner)
+    {
+        Id = Company.IdAuto();
+        CarPlate = carPlate;
+        Type = type;
+        EngineNumber = engineNumber;
+        SerialNumber = serialNumber;
+        PeopleCapacity = peopleCapacity;
+        Owner = owner;
+    }
+
     public void DeleteVehicle(int id)
     {
 
     }
 
-    
+
 }
