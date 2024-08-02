@@ -44,7 +44,7 @@ public class User
 
     protected int CalculateAge()
     {
-        return 0;
+        return DateTime.Now.Year - BirthDate.Year;
     }
 
     protected void ShowAge()
