@@ -4,26 +4,64 @@ var driver1 = new Driver("alberto", "buitrago", "cc", "1032456896", new DateOnly
 var driver2 = new Driver("freddy", "guarin", "cc", "1024578596", new DateOnly(1980, 06, 04), "guarini@gmail.com", "3004596425", "calle 42 wallaby", "987456321", "A2", 10);
 var driver3 = new Driver("esteban", "lopez", "cc", "1032456896", new DateOnly(1992, 04, 23), "lopez@gmail.com", "3005801458", "calle 15c #82bb 35", "123456987", "B2", 7);
 
-Company.drivers.Add(driver1);
-Company.drivers.Add(driver2);
-Company.drivers.Add(driver3);
+Company.DriversList.Add(driver1);
+Company.DriversList.Add(driver2);
+Company.DriversList.Add(driver3);
 
 var customer1 = new Customer("juan", "perez", "cc", "1012345678", new DateOnly(1995, 02, 15), "juanperez@gmail.com", "30098765432", "calle 32 #456 78", "silver", "debit card");
 var customer2 = new Customer("marc", "quitos", "cc", "1024859634", new DateOnly(1997, 10, 17), "marquitos@gmail.com", "3146057896", "calle 28 #53b", "gold", "cash");
 
-Company.customers.Add(customer1);
-Company.customers.Add(customer2);
+Company.CustomersList.Add(customer1);
+Company.CustomersList.Add(customer2);
 
 var vehicle1 = new Vehicle(1, "suv628", "car", "456987", "1112121", 5, driver1);
 var vehicle2 = new Vehicle(2, "bmw789f", "motorcycle", "987654", "2223232", 2, driver2);
 var vehicle3 = new Vehicle(3, "xhs435", "van", "456987", "1112", 7, driver3);
 
-Company.vehicles.Add(vehicle1);
-Company.vehicles.Add(vehicle2);
-Company.vehicles.Add(vehicle3);
+Company.VehiclesList.Add(vehicle1);
+Company.VehiclesList.Add(vehicle2);
+Company.VehiclesList.Add(vehicle3);
+
+void getMenu()
+{
+    Console.Write(@"
+Press any key to get into the menu.");
+    Console.ReadKey();
+    Menu();
+}
 
 void AddDriver()
 {
+    Console.Clear();
+    Console.WriteLine("Add Driver");
+    Console.WriteLine();
+    Console.Write("Name: ");
+    string name = Console.ReadLine();
+    Console.Write("Last Name: ");
+    string lastName = Console.ReadLine();
+    Console.Write("Type Document: ");
+    string typeDocument = Console.ReadLine();
+    Console.Write("Identification Number: ");
+    string identificationNumber = Console.ReadLine();
+    Console.Write("Birth Date (yyyy-mm-dd): ");
+    DateOnly birthDate = DateOnly.Parse(Console.ReadLine());
+    Console.Write("Email: ");
+    string email = Console.ReadLine();
+    Console.Write("Phone Number: ");
+    string phoneNumber = Console.ReadLine();
+    Console.Write("Address: ");
+    string address = Console.ReadLine();
+    Console.Write("License Number: ");
+    string licenseNumber = Console.ReadLine();
+    Console.Write("License Category: ");
+    string licenseCategory = Console.ReadLine();
+    Console.Write("Driving Experience(years): ");
+    int drivingExperience = int.Parse(Console.ReadLine());
+
+    var driver = new Driver(name, lastName, typeDocument, identificationNumber, birthDate, email, phoneNumber, address, licenseNumber, licenseCategory, drivingExperience);
+    Company.AddDriver(driver);
+    Console.WriteLine();
+    Console.WriteLine("Driver added successfully!");
 }
 
 void DeleteDriver()
@@ -59,14 +97,17 @@ void Menu()
         case 1:
         Console.Clear();
             AddDriver();
+            getMenu();
             break;
         case 2:
         Console.Clear();
             DeleteDriver();
+            getMenu();
             break;
         case 3:
         Console.Clear();
             ShowDrivers();
+            getMenu();
             break;
         // case 4:
         // Console.Clear();
