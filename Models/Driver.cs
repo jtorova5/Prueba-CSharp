@@ -20,11 +20,11 @@ public class Driver : User
 
     public void UpdateLicenseCategory(string newCategory)
     {
-
+        LicenseCategory = newCategory;
     }
 
     public void AddExperience(int years)
     {
-        
+
     }
 }
