@@ -166,6 +166,26 @@ void UpdateCustomer()
     Company.UpdateCustomer(identificationNumber);
 }
 
+void AddVehicle()
+{
+
+}
+
+void DeleteVehicle()
+{
+
+}
+
+void ShowVehicles()
+{
+    Company.ShowVehicles();
+}
+
+void UpdateVehicle()
+{
+
+}
+
 void Menu()
 {
     Console.Clear();
@@ -237,6 +257,28 @@ void Menu()
             Console.Clear();
             ShowCustomers();
             UpdateCustomer();
+            getMenu();
+            break;
+        case 9:
+            Console.Clear();
+            AddVehicle();
+            getMenu();
+            break;
+        case 10:
+            Console.Clear();
+            ShowVehicles();
+            DeleteVehicle();
+            getMenu();
+            break;
+        case 11:
+            Console.Clear();
+            ShowVehicles();
+            getMenu();
+            break;
+        case 12:
+            Console.Clear();
+            ShowVehicles();
+            UpdateVehicle();
             getMenu();
             break;
         default:

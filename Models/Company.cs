@@ -175,5 +175,29 @@ public class Company
         VehiclesList.Remove(vehicle);
     }
 
+    public static void UpdateVehicle(string plateNumber)
+    {
 
+    }
+
+    public static void ShowVehicles()
+    {
+        Console.WriteLine("----------------------------------------------------------------------------------------------");
+        Console.WriteLine("|Plate Number|    Type    | Engine Number | Serial Number | Capacity |         Owner         |");
+        Console.WriteLine("----------------------------------------------------------------------------------------------");
+
+        foreach (var vehicle in VehiclesList)
+        {
+            var Id = vehicle.Id;
+            var PlateNumber = vehicle.CarPlate;
+            var Type = vehicle.Type;
+            var EngineNumber = vehicle.EngineNumber;
+            var SerialNumber = vehicle.SerialNumber;
+            var PeopleCapacity = vehicle.PeopleCapacity;
+            var Owner = vehicle.Owner.GetName();
+
+            Console.WriteLine($"|   {PlateNumber,-8} | {Type,-10} | {EngineNumber,-13} | {SerialNumber,-13} |    {PeopleCapacity,-5} | {Owner,-22}|");
+        }
+        Console.WriteLine("----------------------------------------------------------------------------------------------");
+    }
 }
