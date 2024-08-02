@@ -61,11 +61,28 @@ void AddDriver()
     var driver = new Driver(name, lastName, typeDocument, identificationNumber, birthDate, email, phoneNumber, address, licenseNumber, licenseCategory, drivingExperience);
     Company.AddDriver(driver);
     Console.WriteLine();
-    Console.WriteLine("Driver added successfully!");
+    Console.WriteLine($"Driver {name + " " + lastName} added successfully!");
 }
 
 void DeleteDriver()
 {
+    Console.WriteLine("Delete Driver");
+    Console.WriteLine();
+    Console.Write("Enter the driver's identification number: ");
+    string identificationNumber = Console.ReadLine();
+
+    var driver = Company.DriversList.Find(d => d.GetIdNumber() == identificationNumber);
+    if (driver != null)
+    {
+        Company.RemoveDriver(driver);
+        Console.Clear();
+        Console.WriteLine($"Driver {driver.GetName()} deleted successfully!");
+    }
+    else
+    {
+        Console.WriteLine();
+        Console.WriteLine("Driver not found.");
+    }
 }
 
 void ShowDrivers()
@@ -95,17 +112,18 @@ void Menu()
     switch (option)
     {
         case 1:
-        Console.Clear();
+            Console.Clear();
             AddDriver();
             getMenu();
             break;
         case 2:
-        Console.Clear();
+            Console.Clear();
+            ShowDrivers();
             DeleteDriver();
             getMenu();
             break;
         case 3:
-        Console.Clear();
+            Console.Clear();
             ShowDrivers();
             getMenu();
             break;
