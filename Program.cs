@@ -20,3 +20,4 @@ var vehicle3 = new Vehicle(3,"xhs435","van","456987","1112",7,driver3);
 
 Company.vehicles.Add(vehicle1);
 Company.vehicles.Add(vehicle2);
+Company.vehicles.Add(vehicle3);
