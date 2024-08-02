@@ -206,7 +206,11 @@ void ShowVehicles()
 
 void UpdateVehicle()
 {
-
+    Console.WriteLine("Update Vehicle");
+    Console.WriteLine();
+    Console.Write("Enter the vehicle's Id: ");
+    int vehicleId = int.Parse(Console.ReadLine());
+    Company.UpdateVehicle(vehicleId);
 }
 
 void Menu()
@@ -226,7 +230,7 @@ void Menu()
     Console.WriteLine("| 9.  Add vehicle                          |");
     Console.WriteLine("| 10. Delete vehicle                       |");
     Console.WriteLine("| 11. Show vehicles                        |");
-    Console.WriteLine("| 12. Update vehicles                      |");
+    Console.WriteLine("| 12. Update vehicle                       |");
     Console.WriteLine("| 13. Users older than 30                  |");
     Console.WriteLine("| 14. Drivers ordered by experience (dec)  |");
     Console.WriteLine("| 15. Customers that pays with credit card |");

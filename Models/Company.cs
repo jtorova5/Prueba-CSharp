@@ -176,9 +176,36 @@ public class Company
         VehiclesList.Remove(vehicle);
     }
 
-    public static void UpdateVehicle(string plateNumber)
+    public static void UpdateVehicle(int id)
     {
-
+        var vehicle = VehiclesList.Find(v => v.Id == id);
+        if (vehicle != null)
+        {
+            Console.Clear();
+            Console.WriteLine("Update Vehicle");
+            Console.WriteLine();
+            Console.Write("Enter the new plate number: ");
+            var newPlateNumber = Console.ReadLine();
+            vehicle.CarPlate = newPlateNumber;
+            Console.Write("Enter the new type: ");
+            var newType = Console.ReadLine();
+            vehicle.Type = newType;
+            Console.Write("Enter the new engine number: ");
+            var newEngineNumber = Console.ReadLine();
+            vehicle.EngineNumber = newEngineNumber;
+            Console.Write("Enter the new serial number: ");
+            var newSerialNumber = Console.ReadLine();
+            vehicle.SerialNumber = newSerialNumber;
+            Console.Write("Enter the new capacity: ");
+            var newPeopleCapacity = byte.Parse(Console.ReadLine());
+            vehicle.PeopleCapacity = newPeopleCapacity;
+            Console.Clear();
+            Company.ShowDrivers();
+            Console.Write("Enter the new owner's Id number: ");
+            var newOwnerId = int.Parse(Console.ReadLine());
+            var newOwner = DriversList.Find(d => Convert.ToInt32(d.GetIdNumber()) == newOwnerId);
+            vehicle.Owner = newOwner;
+        }
     }
 
     public static void ShowVehicles()
