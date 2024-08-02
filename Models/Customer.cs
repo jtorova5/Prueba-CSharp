@@ -63,9 +63,59 @@ public class Customer : User
     {
         return MembershipLevel;
     }
-    
+
     public string GetPreferredPaymentMethod()
     {
         return PreferredPaymentMethod;
+    }
+
+    public void UpdateName(string name)
+    {
+        Name = name;
+    }
+
+    public void UpdateLastName(string lastName)
+    {
+        LastName = lastName;
+    }
+
+    public void UpdateTypeDocument(string type)
+    {
+        TypeDocument = type;
+    }
+
+    public void UpdateIdentificationNumber(string identificationNumber)
+    {
+        IdentificationNumber = identificationNumber;
+    }
+
+    public void UpdateBirthDate(DateOnly birthDate)
+    {
+        BirthDate = birthDate;
+    }
+
+    public void UpdateEmail(string email)
+    {
+        Email = email;
+    }
+
+    public void UpdatePhoneNumber(string phoneNumber)
+    {
+        PhoneNumber = phoneNumber;
+    }
+
+    public void UpdateAddress(string address)
+    {
+        Address = address;
+    }
+
+    public void UpdateMembershipLevel(string membershipLevel)
+    {
+        MembershipLevel = membershipLevel;
+    }
+
+    public void UpdatePreferredPaymentMethod(string preferredPaymentMethod)
+    {
+        PreferredPaymentMethod = preferredPaymentMethod;
     }
 }

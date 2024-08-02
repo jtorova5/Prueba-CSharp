@@ -139,7 +139,7 @@ void DeleteCustomer()
     string identificationNumber = Console.ReadLine();
 
     var customer = Company.CustomersList.Find(c => c.GetIdNumber() == identificationNumber);
-    if (customer!= null)
+    if (customer != null)
     {
         Company.RemoveCustomer(customer);
         Console.Clear();
@@ -157,23 +157,39 @@ void ShowCustomers()
     Company.ShowCustomers();
 }
 
+void UpdateCustomer()
+{
+    Console.WriteLine("Update Customer");
+    Console.WriteLine();
+    Console.Write("Enter the customer's identification number: ");
+    string identificationNumber = Console.ReadLine();
+    Company.UpdateCustomer(identificationNumber);
+}
+
 void Menu()
 {
     Console.Clear();
-    Console.WriteLine("-----------------------------------");
-    Console.WriteLine("|            TransRiwi            |");
-    Console.WriteLine("-----------------------------------");
-    Console.WriteLine("| 1.  Add driver                  |");
-    Console.WriteLine("| 2.  Delete driver               |");
-    Console.WriteLine("| 3.  Show drivers                |");
-    Console.WriteLine("| 4.  Update driver               |");
-    Console.WriteLine("| 5.  Add customer                |");
-    Console.WriteLine("| 6.  Delete customer             |");
-    Console.WriteLine("| 7.  Show customers              |");
-    Console.WriteLine("| 8.  Add vehicle                 |");
-    Console.WriteLine("| 9.  Delete vehicle              |");
-    Console.WriteLine("| 10. Show vehicles               |");
-    Console.WriteLine("-----------------------------------");
+    Console.WriteLine("--------------------------------------------");
+    Console.WriteLine("|                 TransRiwi                |");
+    Console.WriteLine("--------------------------------------------");
+    Console.WriteLine("| 1.  Add driver                           |");
+    Console.WriteLine("| 2.  Delete driver                        |");
+    Console.WriteLine("| 3.  Show drivers                         |");
+    Console.WriteLine("| 4.  Update driver                        |");
+    Console.WriteLine("| 5.  Add customer                         |");
+    Console.WriteLine("| 6.  Delete customer                      |");
+    Console.WriteLine("| 7.  Show customers                       |");
+    Console.WriteLine("| 8.  Update customer                      |");
+    Console.WriteLine("| 9.  Add vehicle                          |");
+    Console.WriteLine("| 10. Delete vehicle                       |");
+    Console.WriteLine("| 11. Show vehicles                        |");
+    Console.WriteLine("| 12. Update vehicles                      |");
+    Console.WriteLine("| 13. Users older than 30                  |");
+    Console.WriteLine("| 14. Drivers ordered by experience (dec)  |");
+    Console.WriteLine("| 15. Customers that pays with credit card |");
+    Console.WriteLine("| 16. Drivers with 'A2' license            |");
+    Console.WriteLine("| 17. Exit                                 |");
+    Console.WriteLine("--------------------------------------------");
     Console.Write("Write the number of the option that you want: ");
     int option = int.Parse(Console.ReadLine());
 
@@ -217,18 +233,12 @@ void Menu()
             ShowCustomers();
             getMenu();
             break;
-        // case 7:
-        // Console.Clear();
-        //     AddVehicle();
-        //     break;
-        // case 8:
-        // Console.Clear();
-        //     DeleteVehicle();
-        //     break;
-        // case 9:
-        // Console.Clear();
-        //     ShowVehicles();
-        //     break;
+        case 8:
+            Console.Clear();
+            ShowCustomers();
+            UpdateCustomer();
+            getMenu();
+            break;
         default:
             Console.WriteLine("Invalid option.");
             break;

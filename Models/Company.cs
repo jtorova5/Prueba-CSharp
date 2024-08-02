@@ -59,6 +59,8 @@ public class Company
             Console.Write("Enter the new number of years of driving experience: ");
             var newExperience = int.Parse(Console.ReadLine());
             driver.UpdateDrivingExperience(newExperience);
+            Console.Clear();
+            Console.WriteLine($"Driver with Id: {idNumber} updated successfully!");
         }
         else
         {
@@ -97,14 +99,49 @@ public class Company
         CustomersList.Remove(customer);
     }
 
-    public static void AddVehicle(Vehicle vehicle)
+    public static void UpdateCustomer(string idNumber)
     {
-        VehiclesList.Add(vehicle);
-    }
-
-    public static void RemoveVehicle(Vehicle vehicle)
-    {
-        VehiclesList.Remove(vehicle);
+        var customer = CustomersList.Find(c => c.GetIdNumber() == idNumber);
+        if (customer != null)
+        {
+            Console.Clear();
+            Console.WriteLine("Update Customer");
+            Console.WriteLine();
+            Console.Write("Enter the new name: ");
+            var newName = Console.ReadLine();
+            customer.UpdateName(newName);
+            Console.Write("Enter the new last name: ");
+            var newLastName = Console.ReadLine();
+            customer.UpdateLastName(newLastName);
+            Console.Write("Enter the new type document: ");
+            var newTypeDocument = Console.ReadLine();
+            customer.UpdateTypeDocument(newTypeDocument);
+            Console.Write("Enter the new identification number: ");
+            var newIdNumber = Console.ReadLine();
+            customer.UpdateIdentificationNumber(newIdNumber);
+            Console.Write("Enter the new email: ");
+            var newEmail = Console.ReadLine();
+            customer.UpdateEmail(newEmail);
+            Console.Write("Enter the new phone number: ");
+            var newPhoneNumber = Console.ReadLine();
+            customer.UpdatePhoneNumber(newPhoneNumber);
+            Console.Write("Enter the new address: ");
+            var newAddress = Console.ReadLine();
+            customer.UpdateAddress(newAddress);
+            Console.Write("Enter the new membership level: ");
+            var newMembershipLevel = Console.ReadLine();
+            customer.UpdateMembershipLevel(newMembershipLevel);
+            Console.Write("Enter the new preferred payment method: ");
+            var newPreferredPaymentMethod = Console.ReadLine();
+            customer.UpdatePreferredPaymentMethod(newPreferredPaymentMethod);
+            Console.Clear();
+            Console.WriteLine($"Customer with Id: {idNumber} updated successfully!");
+        }
+        else
+        {
+            Console.Clear();
+            Console.WriteLine("Customer not found.");
+        }
     }
 
     public static void ShowCustomers()
@@ -127,4 +164,16 @@ public class Company
         }
         Console.WriteLine("--------------------------------------------------------------------------------------------------------------------------------------------");
     }
+
+    public static void AddVehicle(Vehicle vehicle)
+    {
+        VehiclesList.Add(vehicle);
+    }
+
+    public static void RemoveVehicle(Vehicle vehicle)
+    {
+        VehiclesList.Remove(vehicle);
+    }
+
+
 }
