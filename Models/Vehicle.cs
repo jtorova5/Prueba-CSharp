@@ -14,4 +14,15 @@ public class Vehicle
     public string SerialNumber { get; set; }
     public byte PeopleCapacity { get; set; }
     public Driver Owner { get; set; }
+
+    public Vehicle(int id, string carPlate, string type, string engineNumber, string serialNumber, byte peopleCapacity, Driver owner)
+    {
+        Id = id;
+        CarPlate = carPlate;
+        Type = type;
+        EngineNumber = engineNumber;
+        SerialNumber = serialNumber;
+        PeopleCapacity = peopleCapacity;
+        Owner = owner;
+    }
 }
