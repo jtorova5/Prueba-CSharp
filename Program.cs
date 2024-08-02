@@ -14,10 +14,27 @@ var customer2 = new Customer("marc", "quitos", "cc", "1024859634", new DateOnly(
 Company.customers.Add(customer1);
 Company.customers.Add(customer2);
 
-var vehicle1 = new Vehicle(1,"suv628","car","456987","1112121",5,driver1);
-var vehicle2 = new Vehicle(2,"bmw789f","motorcycle","987654","2223232",2,driver2);
-var vehicle3 = new Vehicle(3,"xhs435","van","456987","1112",7,driver3);
+var vehicle1 = new Vehicle(1, "suv628", "car", "456987", "1112121", 5, driver1);
+var vehicle2 = new Vehicle(2, "bmw789f", "motorcycle", "987654", "2223232", 2, driver2);
+var vehicle3 = new Vehicle(3, "xhs435", "van", "456987", "1112", 7, driver3);
 
 Company.vehicles.Add(vehicle1);
 Company.vehicles.Add(vehicle2);
 Company.vehicles.Add(vehicle3);
+
+void Menu()
+{
+    Console.WriteLine("-----------------------------------");
+    Console.WriteLine("|            TransRiwi            |");
+    Console.WriteLine("-----------------------------------");
+    Console.WriteLine("| 1.  Add driver                  |");
+    Console.WriteLine("| 2.  Delete driver               |");
+    Console.WriteLine("| 3.  Add customer                |");
+    Console.WriteLine("| 4.  Delete customer             |");
+    Console.WriteLine("| 5.  Add vehicle                 |");
+    Console.WriteLine("| 6.  Delete vehicle              |");
+    Console.WriteLine("-----------------------------------");
+    Console.Write("Write the number of the option that you want: ");
+}
+
+Menu();
